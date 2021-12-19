@@ -88,7 +88,7 @@ class StateBar {
           this.setStatusBarText(0);
           
           // 监听文档改变事件，开始下一次计时
-          const subscription = vscode.workspace.onDidChangeTextDocument(() => {
+          const subscription = vscode.workspace.onDidSaveTextDocument(() => {
             this.startFlag = true;
             calculatedTime = 0;
             // 取消侦听
